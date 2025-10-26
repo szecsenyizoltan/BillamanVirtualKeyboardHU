@@ -6,6 +6,9 @@ Virtuális magyar billentyűzet webes űrlapokhoz és szerkeszthető mezőkhöz 
 Figyelem! Az egész projektet promptolva kezdtem, amivel 95%-ig jutottam. Ezt követően kézzel javítottam a kódot több iterációban. A befektett munka összesen 3 óra volt.
 ---
 ![screenshot](Képernyőkép_20251026_175217.png)
+## Motiváció
+A Clean Center-nél a termelésben használunk Linuxos Kioskokat. Sajnos nincs hozzá elérhető, stabilan mükődő magyar virtuális billentyűzet. 
+
 ## Fő funkciók
 
 * **HU-aware beviteli réteg**: AltGr és Shift térképezések, ékezetes összevonások (pl. `o:`→`ö`, `u'`→`ű`).
