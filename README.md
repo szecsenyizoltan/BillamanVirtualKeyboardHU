@@ -1,6 +1,6 @@
 # Billman Virtual Keyboard (HU)
 
-Virtuális, magyar billentyűzet webes űrlapokhoz és szerkeszthető mezőkhöz. Támogatja a **drag & drop** mozgatást, **minimalizálást/dokkolást**, **fókusz-követést**, a javított **Backspace/Delete** viselkedést, valamint a **Ctrl/Alt/AltGr/Shift/CapsLock** módosítókat és a magyar ékezeteket.
+Virtuális magyar billentyűzet webes űrlapokhoz és szerkeszthető mezőkhöz KIOSK-on futó böngészők számára. Támogatja a **drag & drop** mozgatást, **minimalizálást/dokkolást**, **fókusz-követést**, a javított **Backspace/Delete** viselkedést, valamint a **Ctrl/Alt/AltGr/Shift/CapsLock** módosítókat és a magyar ékezeteket.
 
 > Licenc: MIT • Szerző: ChatGPT • Javítások: Szécsényi Zoltán
 
