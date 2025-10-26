@@ -3,7 +3,7 @@
 Virtuális magyar billentyűzet webes űrlapokhoz és szerkeszthető mezőkhöz KIOSK-on futó böngészők számára. Támogatja a **drag & drop** mozgatást, **minimalizálást/dokkolást**, **fókusz-követést**, a javított **Backspace/Delete** viselkedést, valamint a **Ctrl/Alt/AltGr/Shift/CapsLock** módosítókat és a magyar ékezeteket.
 
 > Licenc: MIT • Szerző: ChatGPT • Javítások: Szécsényi Zoltán
-
+Figyelem! Az egész prjoketet prompotlva kezdtem amivel 95%-ig jutottm. Ezt követően kézzel javítottam a kódot több iterációban.
 ---
 
 ## Fő funkciók
