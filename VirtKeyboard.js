@@ -255,6 +255,7 @@ export class VirtKeyboard {
         this._syncToggles();
         this._bindDrag();
         this.$.minBtn.addEventListener('click', () => this.toggle());
+        this.$.minBtn.addEventListener('touchstart', (e) => { e.preventDefault(); this.toggle(); }, {passive: false});
         this.$.fab.addEventListener('click', () => this.restore());
         this._positionFab();
 
@@ -405,6 +406,7 @@ export class VirtKeyboard {
         el.dataset.base = label; // store base legend
         el.dataset.code = key.code || label;
         el.addEventListener('click', () => this._onKey(key));
+        el.addEventListener('touchstart', (e) => { e.preventDefault(); this._onKey(key); }, { passive: false });
         // label container (main + optional sub)
         const main = document.createElement('span');
         main.className = 'main';
@@ -418,6 +420,13 @@ export class VirtKeyboard {
     }
 
     _onKey(k) {
+        // max per click/touch & double click
+        const now = Date.now();
+        if (this._lastKeyCode === k.code && now - this._lastPressTime < 100) return;
+        this._lastPressTime = now;
+        this._lastKeyCode = k.code;
+        
+        
         if (this.opts.followFocus && this.target && this._isWritable(this.target)) {
             this.target.focus({preventScroll: true});
         }
@@ -480,16 +489,14 @@ export class VirtKeyboard {
             }
         }
 
+
+
         const isLetter = ch.length === 1 && /[A-Za-záéíóöőúüű]/i.test(ch);
         const needUpper = (this.state.caps ^ this.state.shift);
-        /*
-         if (isLetter) ch = needUpper ? ch.toUpperCase() : ch.toLowerCase();
-         else if (this.state.shift){ ch = this.shiftMap.get(ch) || ch; }
-         */
-        if (this.state.shift) {
-            ch = this.shiftMap.get(ch) || ch;
-        } else if (isLetter) {
+        if (isLetter) {
             ch = needUpper ? ch.toUpperCase() : ch.toLowerCase();
+        } else if (this.state.shift) {
+            ch = this.shiftMap.get(ch) || ch;
         }
 
 
