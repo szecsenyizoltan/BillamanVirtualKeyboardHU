@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Virtuális Magyar Billentyűzet – Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+    }
+    textarea {
+      width: 100%;
+      height: 150px;
+      font-size: 18px;
+      padding: 10px;
+    }
+    #vk {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body style="background-color: #fff;">
+
+<h2>Virtuális Magyar Billentyűzet – Demo</h2>
+
+<textarea id="t" placeholder="Írj ide…"></textarea>
+
+<div id="vk"></div>
+
+<script type="module">
+  import { VirtKeyboard } from './VirtKeyboard.js';
+
+  const kb = new VirtKeyboard({
+    container: '#vk',
+    target: '#t',            // explicit a demo kedvéért, tisztán érthető
+    followFocus: true,
+    draggable: true,
+    minimizable: true,
+    dockCorner: 'bottom-right',
+  });
+
+  // billentyűzet automatikusan nyíljon meg
+  kb.restore();
+</script>
+
+</body>
+</html>
